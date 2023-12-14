@@ -13,7 +13,7 @@ class Contact {
     this.fullName = fullName
     this.email = email
     this.phone = phone
-    this.number = number
+    this.id = id
   }
 }
 
