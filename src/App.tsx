@@ -1,5 +1,6 @@
 import Cabecalho from './containers/Cabecalho'
 import Formulario from './containers/Fomulario'
+import ListaDeContatos from './containers/ListaDeContatos'
 import EstiloGlobal, { Container } from './styles'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Container>
         <Cabecalho />
         <Formulario />
+        <ListaDeContatos />
       </Container>
     </>
   )
