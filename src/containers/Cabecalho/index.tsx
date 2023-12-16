@@ -6,7 +6,7 @@ const BarraSuperior = () => {
   return (
     <HeaderWrapper>
       <FaArrowLeft />
-      <h1>Contact List</h1>
+      <h1>Meus Contatos</h1>
       <FaPlus />
     </HeaderWrapper>
   )
