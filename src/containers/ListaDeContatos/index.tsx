@@ -1,3 +1,5 @@
+import { FiMoreVertical } from 'react-icons/fi'
+
 import {
   ContactItem,
   ContactsList,
@@ -11,24 +13,36 @@ const ListaDeContatos = () => {
       <SearchResults>Esta pesquisa retornou 0 resultados</SearchResults>
       <ContactsList>
         <ContactItem>
-          <p>Nome</p>
-          <p>Telefone</p>
-          <p>Email</p>
+          <div>
+            <p>Nome</p>
+            <p>Telefone</p>
+            <p>Email</p>
+          </div>
+          <FiMoreVertical />
         </ContactItem>
         <ContactItem>
-          <p>Nome</p>
-          <p>Telefone</p>
-          <p>Email</p>
+          <div>
+            <p>Nome</p>
+            <p>Telefone</p>
+            <p>Email</p>
+          </div>
+          <FiMoreVertical />
         </ContactItem>
         <ContactItem>
-          <p>Nome</p>
-          <p>Telefone</p>
-          <p>Email</p>
+          <div>
+            <p>Nome</p>
+            <p>Telefone</p>
+            <p>Email</p>
+          </div>
+          <FiMoreVertical />
         </ContactItem>
         <ContactItem>
-          <p>Nome</p>
-          <p>Telefone</p>
-          <p>Email</p>
+          <div>
+            <p>Nome</p>
+            <p>Telefone</p>
+            <p>Email</p>
+          </div>
+          <FiMoreVertical />
         </ContactItem>
       </ContactsList>
     </ListaDeContatosWrapper>

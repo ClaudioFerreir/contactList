@@ -14,10 +14,14 @@ export const ContactsList = styled.ul`
 `
 
 export const ContactItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #ccc;
   color: #666;
   margin-top: 1em;
   padding-bottom: 0.8em;
+  padding-right: 0.5em;
 
   & p:first-child {
     color: #000;
