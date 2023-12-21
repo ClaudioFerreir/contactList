@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 type FiltroState = {
-  termo: string
+  termo?: string
 }
 
 const initialState: FiltroState = {

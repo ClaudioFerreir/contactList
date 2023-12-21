@@ -2,9 +2,9 @@ import { Provider } from 'react-redux'
 
 import store from './store'
 import Cabecalho from './containers/Cabecalho'
-import Formulario from './containers/FomularioPesquisa'
 import ListaDeContatos from './containers/ListaDeContatos'
 import EstiloGlobal, { Container } from './styles'
+import FormularioPesquisa from './containers/FomularioPesquisa'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <EstiloGlobal />
       <Container>
         <Cabecalho />
-        <Formulario />
+        <FormularioPesquisa />
         <ListaDeContatos />
       </Container>
     </Provider>

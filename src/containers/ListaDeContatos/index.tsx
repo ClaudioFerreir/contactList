@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
-import { RootReducer } from '../../store'
 
+import { RootReducer } from '../../store'
 import { FiMoreVertical } from 'react-icons/fi'
 
 import {
@@ -32,9 +32,9 @@ const ListaDeContatos = () => {
     let mensagem = ''
 
     if (termo !== undefined && termo.length) {
-      mensagem = `Esta pesquisa retornou ${quantidade} resultados`
+      mensagem = `Esta pesquisa retornou ${quantidade} resultado(s)`
     } else {
-      mensagem = `Nenhum contato encontrado`
+      mensagem = ``
     }
 
     return mensagem
