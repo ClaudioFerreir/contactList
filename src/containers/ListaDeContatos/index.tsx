@@ -1,3 +1,6 @@
+import { useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
+
 import { FiMoreVertical } from 'react-icons/fi'
 
 import {
@@ -8,42 +11,52 @@ import {
 } from './styles'
 
 const ListaDeContatos = () => {
+  const { itens } = useSelector((state: RootReducer) => state.contatos)
+  const { termo } = useSelector((state: RootReducer) => state.filtro)
+
+  const filtraContatos = () => {
+    let contatosFiltrados = itens
+
+    if (termo !== undefined) {
+      contatosFiltrados = contatosFiltrados.filter(
+        (item) => item.fullName.toLowerCase().search(termo.toLowerCase()) >= 0
+      )
+
+      return contatosFiltrados
+    } else {
+      return itens
+    }
+  }
+
+  const exibeResultadosFiltragem = (quantidade: number) => {
+    let mensagem = ''
+
+    if (termo !== undefined && termo.length) {
+      mensagem = `Esta pesquisa retornou ${quantidade} resultados`
+    } else {
+      mensagem = `Nenhum contato encontrado`
+    }
+
+    return mensagem
+  }
+
+  const contatosFiltrados = filtraContatos()
+  const mensagem = exibeResultadosFiltragem(contatosFiltrados.length)
+
   return (
     <ListaDeContatosWrapper>
-      <SearchResults>Esta pesquisa retornou 0 resultados</SearchResults>
+      <SearchResults>{mensagem}</SearchResults>
       <ContactsList>
-        <ContactItem>
-          <div>
-            <p>Nome</p>
-            <p>Telefone</p>
-            <p>Email</p>
-          </div>
-          <FiMoreVertical />
-        </ContactItem>
-        <ContactItem>
-          <div>
-            <p>Nome</p>
-            <p>Telefone</p>
-            <p>Email</p>
-          </div>
-          <FiMoreVertical />
-        </ContactItem>
-        <ContactItem>
-          <div>
-            <p>Nome</p>
-            <p>Telefone</p>
-            <p>Email</p>
-          </div>
-          <FiMoreVertical />
-        </ContactItem>
-        <ContactItem>
-          <div>
-            <p>Nome</p>
-            <p>Telefone</p>
-            <p>Email</p>
-          </div>
-          <FiMoreVertical />
-        </ContactItem>
+        {contatosFiltrados.map((item) => (
+          <ContactItem key={item.id}>
+            <div>
+              <p>{item.fullName}</p>
+              <p>{item.phone}</p>
+              <p>{item.email}</p>
+            </div>
+            <FiMoreVertical />
+          </ContactItem>
+        ))}
       </ContactsList>
     </ListaDeContatosWrapper>
   )
