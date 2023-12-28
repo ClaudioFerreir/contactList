@@ -11,10 +11,13 @@ export const ContactItem = styled.li`
   color: #666;
   margin-top: 1em;
   padding-bottom: 0.8em;
-  padding-right: 0.5em;
 
   & p:first-child {
     color: #000;
+  }
+
+  & p:last-child {
+    font-size: 0.7em;
   }
 
   & p span {
@@ -31,7 +34,7 @@ export const Botao = styled.button`
   font-weight: bold;
   font-size: 0.8em;
   color: #fff;
-  padding: 0.8em 1.8em;
+  padding: 0.5em 1em;
   border: none;
   cursor: pointer;
   background-color: #2f3640;
@@ -46,10 +49,10 @@ export const BotaoCancelar = styled(Botao)`
   margin-left: 0.5em;
 `
 export const BotaoExcluir = styled(FiTrash2)`
-  font-size: 1.5em;
+  font-size: 1em;
 `
 
 export const BotaoMenu = styled(FiMoreVertical)`
-  font-size: 1.5em;
+  font-size: 1em;
   margin-left: 0.5em;
 `

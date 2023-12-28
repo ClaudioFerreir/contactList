@@ -1,18 +1,16 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 import { MdFavoriteBorder, MdOutlineFavorite } from 'react-icons/md'
+import { remover } from '../../store/reducers/contatos'
+import ContactClass from '../../models/contact'
 
 import * as S from './styles'
 
-type Props = {
-  fullName: string
-  email: string
-  phone: number
-  id: number
-  friend: boolean
-}
+type Props = ContactClass
 
 const Contato = ({ email, fullName, phone, id, friend }: Props) => {
+  const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
   return (
     <S.ContactItem key={id}>
@@ -34,7 +32,7 @@ const Contato = ({ email, fullName, phone, id, friend }: Props) => {
           </>
         ) : (
           <>
-            <S.BotaoExcluir />
+            <S.BotaoExcluir onClick={() => dispatch(remover(id))} />
             <S.BotaoMenu onClick={() => setEstaEditando(true)} />
           </>
         )}
