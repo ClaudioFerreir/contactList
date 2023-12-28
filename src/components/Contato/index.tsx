@@ -17,10 +17,10 @@ const Contato = ({ email, fullName, phone, id, friend }: Props) => {
       <div>
         <p>
           <span>{friend ? <MdOutlineFavorite /> : <MdFavoriteBorder />}</span>
-          {fullName}
+          <textarea id="fullName" value={fullName}></textarea>
         </p>
-        <p>{phone}</p>
-        <p>{email}</p>
+        <textarea id="phone" value={phone}></textarea>
+        <textarea id="email" value={email}></textarea>
       </div>
       <S.MenuContact>
         {estaEditando ? (

@@ -12,17 +12,14 @@ export const ContactItem = styled.li`
   margin-top: 1em;
   padding-bottom: 0.8em;
 
-  & p:first-child {
-    color: #000;
-  }
-
-  & p:last-child {
-    font-size: 0.7em;
-  }
-
-  & p span {
-    color: ${variaveis.cores.vermelho};
-    margin-right: 0.5em;
+  & textarea {
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+    resize: none;
+    height: 1.6em;
+    vertical-align: middle;
+    border: none;
   }
 `
 
