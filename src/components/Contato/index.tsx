@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-import { FiMoreVertical, FiTrash2 } from 'react-icons/fi'
 import { MdFavoriteBorder, MdOutlineFavorite } from 'react-icons/md'
 
 import * as S from './styles'
@@ -28,13 +27,15 @@ const Contato = ({ email, fullName, phone, id, friend }: Props) => {
       <S.MenuContact>
         {estaEditando ? (
           <>
-            <S.Botao>Salvar</S.Botao>
-            <S.Botao onClick={() => setEstaEditando(false)}>Cancelar</S.Botao>
+            <S.BotaoSalvar>Salvar</S.BotaoSalvar>
+            <S.BotaoCancelar onClick={() => setEstaEditando(false)}>
+              Cancelar
+            </S.BotaoCancelar>
           </>
         ) : (
           <>
-            <FiTrash2 />
-            <FiMoreVertical onClick={() => setEstaEditando(true)} />
+            <S.BotaoExcluir />
+            <S.BotaoMenu onClick={() => setEstaEditando(true)} />
           </>
         )}
       </S.MenuContact>
