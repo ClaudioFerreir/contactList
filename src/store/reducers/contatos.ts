@@ -11,19 +11,22 @@ const initialState: ContactState = {
       id: 1,
       fullName: 'João Silva',
       email: 'joaosilva@email.com',
-      phone: 11999999999
+      phone: 11999999999,
+      friend: true
     },
     {
       id: 2,
       fullName: 'Maria Joaquina',
       email: 'mariajoaquina@email.com',
-      phone: 11999999999
+      phone: 11999999999,
+      friend: false
     },
     {
       id: 3,
       fullName: 'Josefina Silva',
       email: 'josefinasilva@email.com',
-      phone: 11999999999
+      phone: 11999999999,
+      friend: false
     }
   ]
 }

@@ -6,11 +6,10 @@ export const FiltroWrapper = styled.div`
   grid-auto-flow: column;
   grid-template-columns: 70% auto;
   margin-top: 2em;
-  overflow-x: hidden;
   padding: 0 1em;
 `
 
-const FormWrapper = styled.form`
+export const FormWrapper = styled.form`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,10 +39,8 @@ export const BFTag = styled.span`
   max-width: 100%;
   padding: 0.2em 0.5em;
   background-color: #ffff00;
-  border-radius: 12px;
+  border-radius: 16px;
   color: #000;
   font-size: 0.7em;
   text-align: center;
 `
-
-export default FormWrapper

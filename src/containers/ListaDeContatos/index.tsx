@@ -1,14 +1,9 @@
 import { useSelector } from 'react-redux'
 
 import { RootReducer } from '../../store'
-import { FiMoreVertical } from 'react-icons/fi'
 
-import {
-  ContactItem,
-  ContactsList,
-  ListaDeContatosWrapper,
-  SearchResults
-} from './styles'
+import * as S from './styles'
+import Contato from '../../components/Contato'
 
 const ListaDeContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contatos)
@@ -44,21 +39,21 @@ const ListaDeContatos = () => {
   const mensagem = exibeResultadosFiltragem(contatosFiltrados.length)
 
   return (
-    <ListaDeContatosWrapper>
-      <SearchResults>{mensagem}</SearchResults>
-      <ContactsList>
+    <S.ListaDeContatosWrapper>
+      <S.SearchResults>{mensagem}</S.SearchResults>
+      <S.ContactsList>
         {contatosFiltrados.map((item) => (
-          <ContactItem key={item.id}>
-            <div>
-              <p>{item.fullName}</p>
-              <p>{item.phone}</p>
-              <p>{item.email}</p>
-            </div>
-            <FiMoreVertical />
-          </ContactItem>
+          <Contato
+            email={item.email}
+            fullName={item.fullName}
+            id={item.id}
+            key={item.id}
+            phone={item.phone}
+            friend={item.friend}
+          />
         ))}
-      </ContactsList>
-    </ListaDeContatosWrapper>
+      </S.ContactsList>
+    </S.ListaDeContatosWrapper>
   )
 }
 
