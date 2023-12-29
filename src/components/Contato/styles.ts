@@ -2,6 +2,11 @@ import { styled } from 'styled-components'
 
 import variaveis from '../../styles/variaveis'
 import { FiMoreVertical, FiTrash2 } from 'react-icons/fi'
+import { MdOutlineFavorite } from 'react-icons/md'
+
+export const Favorito = styled(MdOutlineFavorite)`
+  color: ${variaveis.cores.vermelho};
+`
 
 export const ContactItem = styled.li`
   display: flex;
@@ -20,11 +25,9 @@ export const ContactItem = styled.li`
     height: 1.6em;
     vertical-align: middle;
     border: none;
+    outline: none;
+    color: #000;
   }
-`
-
-export const MenuContact = styled.div`
-  cursor: pointer;
 `
 
 export const Botao = styled.button`
@@ -46,10 +49,13 @@ export const BotaoCancelar = styled(Botao)`
   margin-left: 0.5em;
 `
 export const BotaoExcluir = styled(FiTrash2)`
-  font-size: 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: ${variaveis.cores.vermelho};
 `
 
 export const BotaoMenu = styled(FiMoreVertical)`
-  font-size: 1em;
+  font-size: 1.5em;
   margin-left: 0.5em;
+  cursor: pointer;
 `

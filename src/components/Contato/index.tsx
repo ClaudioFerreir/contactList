@@ -1,7 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { MdFavoriteBorder, MdOutlineFavorite } from 'react-icons/md'
 import { remover } from '../../store/reducers/contatos'
 import ContactClass from '../../models/contact'
 
@@ -9,24 +8,61 @@ import * as S from './styles'
 
 type Props = ContactClass
 
-const Contato = ({ email, fullName, phone, id, friend }: Props) => {
+const Contato = ({
+  email: emailOriginal,
+  fullName: fullNameOriginal,
+  phone: phoneOriginal,
+  id,
+  friend
+}: Props) => {
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState(0)
+
+  useEffect(() => {
+    if (fullNameOriginal.length > 0) {
+      setFullName(fullNameOriginal)
+    }
+    setEmail(emailOriginal)
+    setPhone(phoneOriginal)
+  }, [fullNameOriginal, emailOriginal, phoneOriginal])
+
   return (
     <S.ContactItem key={id}>
       <div>
         <p>
-          <span>{friend ? <MdOutlineFavorite /> : <MdFavoriteBorder />}</span>
-          <textarea id="fullName" value={fullName}></textarea>
+          <span>{friend ? <S.Favorito /> : ''}</span>
+          <textarea
+            disabled={!estaEditando}
+            value={fullName}
+            onChange={(evento) => setFullName(evento.target.value)}
+          ></textarea>
         </p>
-        <textarea id="phone" value={phone}></textarea>
-        <textarea id="email" value={email}></textarea>
+        <textarea
+          disabled={!estaEditando}
+          value={phone}
+          onChange={(evento) => setPhone(parseInt(evento.target.value))}
+        ></textarea>
+        <textarea
+          disabled={!estaEditando}
+          value={email}
+          onChange={(evento) => setEmail(evento.target.value)}
+        ></textarea>
       </div>
-      <S.MenuContact>
+      <div>
         {estaEditando ? (
           <>
             <S.BotaoSalvar>Salvar</S.BotaoSalvar>
-            <S.BotaoCancelar onClick={() => setEstaEditando(false)}>
+            <S.BotaoCancelar
+              onClick={() => {
+                setEstaEditando(false)
+                setEmail(emailOriginal)
+                setFullName(fullNameOriginal)
+                setPhone(phoneOriginal)
+              }}
+            >
               Cancelar
             </S.BotaoCancelar>
           </>
@@ -36,7 +72,7 @@ const Contato = ({ email, fullName, phone, id, friend }: Props) => {
             <S.BotaoMenu onClick={() => setEstaEditando(true)} />
           </>
         )}
-      </S.MenuContact>
+      </div>
     </S.ContactItem>
   )
 }
