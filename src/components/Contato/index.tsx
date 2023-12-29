@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { remover } from '../../store/reducers/contatos'
+import { remover, editar } from '../../store/reducers/contatos'
 import ContactClass from '../../models/contact'
 
 import * as S from './styles'
@@ -29,6 +29,13 @@ const Contato = ({
     setPhone(phoneOriginal)
   }, [fullNameOriginal, emailOriginal, phoneOriginal])
 
+  function cancelarEdicao() {
+    setEstaEditando(false)
+    setEmail(emailOriginal)
+    setFullName(fullNameOriginal)
+    setPhone(phoneOriginal)
+  }
+
   return (
     <S.ContactItem key={id}>
       <div>
@@ -54,15 +61,22 @@ const Contato = ({
       <div>
         {estaEditando ? (
           <>
-            <S.BotaoSalvar>Salvar</S.BotaoSalvar>
-            <S.BotaoCancelar
+            <S.BotaoSalvar
               onClick={() => {
+                dispatch(
+                  editar({
+                    id,
+                    fullName,
+                    email,
+                    phone
+                  })
+                )
                 setEstaEditando(false)
-                setEmail(emailOriginal)
-                setFullName(fullNameOriginal)
-                setPhone(phoneOriginal)
               }}
             >
+              Salvar
+            </S.BotaoSalvar>
+            <S.BotaoCancelar onClick={() => cancelarEdicao()}>
               Cancelar
             </S.BotaoCancelar>
           </>

@@ -3,7 +3,7 @@ class Contact {
   email: string
   phone: number
   id: number
-  friend: boolean = false
+  friend?: boolean = false
 
   constructor(
     fullName: string,
