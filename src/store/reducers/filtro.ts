@@ -2,10 +2,12 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 type FiltroState = {
   termo?: string
+  friend?: boolean
 }
 
 const initialState: FiltroState = {
-  termo: ''
+  termo: '',
+  friend: true
 }
 
 const filtroSlice = createSlice({

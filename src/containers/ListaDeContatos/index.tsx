@@ -17,9 +17,11 @@ const ListaDeContatos = () => {
         (item) => item.fullName.toLowerCase().search(termo.toLowerCase()) >= 0
       )
 
-      return contatosFiltrados
+      return contatosFiltrados.sort((a, b) =>
+        a.fullName.localeCompare(b.fullName)
+      )
     } else {
-      return itens
+      return itens.sort((a, b) => a.fullName.localeCompare(b.fullName))
     }
   }
 
