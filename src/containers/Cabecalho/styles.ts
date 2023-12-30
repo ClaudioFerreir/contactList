@@ -11,4 +11,5 @@ const HeaderWrapper = styled.header`
     font-size: 1.3em;
   }
 `
+
 export default HeaderWrapper

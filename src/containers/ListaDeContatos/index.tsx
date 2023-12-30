@@ -4,6 +4,7 @@ import { RootReducer } from '../../store'
 
 import * as S from './styles'
 import Contato from '../../components/Contato'
+import { MainContent } from '../../styles'
 
 const ListaDeContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contatos)
@@ -41,7 +42,7 @@ const ListaDeContatos = () => {
   const mensagem = exibeResultadosFiltragem(contatosFiltrados.length)
 
   return (
-    <S.ListaDeContatosWrapper>
+    <MainContent>
       <S.SearchResults>{mensagem}</S.SearchResults>
       <S.ContactsList>
         {contatosFiltrados.map((item) => (
@@ -55,7 +56,7 @@ const ListaDeContatos = () => {
           />
         ))}
       </S.ContactsList>
-    </S.ListaDeContatosWrapper>
+    </MainContent>
   )
 }
 

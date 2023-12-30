@@ -10,10 +10,14 @@ const EstiloGlobal = createGlobalStyle`
   }
 `
 
-export const Container = styled.div`
+export const Container = styled.main`
   max-width: 768px;
   width: 100%;
+`
+
+export const MainContent = styled.div`
   margin: 0 auto;
+  padding: 0.5em 1.5em;
 `
 
 export default EstiloGlobal
