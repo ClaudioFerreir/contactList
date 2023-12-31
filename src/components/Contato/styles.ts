@@ -32,9 +32,9 @@ export const ContactItem = styled.li`
 
 export const Botao = styled.button`
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.5em;
   color: #fff;
-  padding: 0.5em 1em;
+  padding: 0.8em 0.8em;
   border: none;
   cursor: pointer;
   background-color: #2f3640;
