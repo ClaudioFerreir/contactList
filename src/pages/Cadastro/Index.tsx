@@ -5,7 +5,7 @@ import { Container } from '../../styles'
 const Cadastro = () => (
   <>
     <Container>
-      <Cabecalho />
+      <Cabecalho headerTitle="Novo contato" />
       <FormCadastro />
     </Container>
   </>

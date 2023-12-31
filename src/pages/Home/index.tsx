@@ -4,7 +4,7 @@ import ListaDeContatos from '../../containers/ListaDeContatos'
 
 const Home = () => (
   <>
-    <Cabecalho />
+    <Cabecalho headerTitle="Meus Contatos" mainPage={true} />
     <FormularioPesquisa />
     <ListaDeContatos />
   </>

@@ -4,13 +4,22 @@ import { FaArrowLeft, FaPlus } from 'react-icons/fa'
 
 import HeaderWrapper from './styles'
 
-const BarraSuperior = () => {
+type Props = {
+  headerTitle: string
+  mainPage?: boolean
+}
+
+const BarraSuperior = (props: Props) => {
+  const { headerTitle, mainPage } = props
+
   return (
     <HeaderWrapper>
-      <Link to={'/'}>
-        <FaArrowLeft />
-      </Link>
-      <h1>Meus Contatos</h1>
+      {mainPage ? null : (
+        <Link to={'/'}>
+          <FaArrowLeft />
+        </Link>
+      )}
+      <h1>{headerTitle}</h1>
       <Link to={'/novo'}>
         <FaPlus />
       </Link>
