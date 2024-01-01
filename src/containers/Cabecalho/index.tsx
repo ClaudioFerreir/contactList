@@ -20,9 +20,11 @@ const BarraSuperior = (props: Props) => {
         </Link>
       )}
       <h1>{headerTitle}</h1>
-      <Link to={'/novo'}>
-        <FaPlus />
-      </Link>
+      {mainPage ? (
+        <Link to={'/novo'}>
+          <FaPlus />
+        </Link>
+      ) : null}
     </HeaderWrapper>
   )
 }
