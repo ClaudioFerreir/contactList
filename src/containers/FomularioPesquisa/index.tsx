@@ -19,7 +19,6 @@ const FormularioPesquisa = () => {
           onChange={(evento) => dispatch(alterarTermo(evento.target.value))}
         />
       </S.FormWrapper>
-      <S.BFTag>Amigos</S.BFTag>
     </S.FiltroWrapper>
   )
 }
