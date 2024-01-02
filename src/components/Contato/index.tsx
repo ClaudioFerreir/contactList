@@ -5,6 +5,7 @@ import { remover, editar } from '../../store/reducers/contatos'
 import ContactClass from '../../models/contact'
 
 import * as S from './styles'
+import { PhoneInput } from './styles'
 
 type Props = ContactClass
 
@@ -19,7 +20,7 @@ const Contato = ({
   const [estaEditando, setEstaEditando] = useState(false)
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState(0)
+  const [phone, setPhone] = useState('')
 
   useEffect(() => {
     if (fullNameOriginal.length > 0) {
@@ -47,11 +48,12 @@ const Contato = ({
             onChange={(evento) => setFullName(evento.target.value)}
           ></textarea>
         </p>
-        <textarea
+        <PhoneInput
+          mask="(99) 99999-9999"
           disabled={!estaEditando}
           value={phone}
-          onChange={(evento) => setPhone(parseInt(evento.target.value))}
-        ></textarea>
+          onChange={(evento) => setPhone(evento.target.value)}
+        ></PhoneInput>
         <textarea
           disabled={!estaEditando}
           value={email}

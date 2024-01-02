@@ -2,7 +2,11 @@ import { FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import FormElement, { CadastroButton, InputCadastroForm } from './styles'
+import FormElement, {
+  CadastroButton,
+  InputCadastroForm,
+  InputPhone
+} from './styles'
 import Contact from '../../models/contact'
 import { cadastrar } from '../../store/reducers/contatos'
 
@@ -12,7 +16,7 @@ const NewContatoForm = () => {
 
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState(0)
+  const [phone, setPhone] = useState('')
   const [friend, setFriend] = useState(false)
 
   const cadastrarContato = (evento: FormEvent) => {
@@ -29,6 +33,7 @@ const NewContatoForm = () => {
         onChange={(evento) => setFullName(evento.target.value)}
         type="text"
         placeholder="Nome completo"
+        required
       />
       <InputCadastroForm
         value={email}
@@ -37,11 +42,13 @@ const NewContatoForm = () => {
         placeholder="Email"
       />
       <div>
-        <InputCadastroForm
+        <InputPhone
+          mask="(99) 99999-9999"
           value={phone}
-          onChange={(evento) => setPhone(Number(evento.target.value))}
-          type="number"
+          onChange={(evento) => setPhone(evento.target.value)}
+          type="text"
           placeholder="Telefone"
+          required
         />
         <InputCadastroForm
           checked={friend}

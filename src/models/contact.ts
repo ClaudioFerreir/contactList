@@ -1,14 +1,14 @@
 class Contact {
   fullName: string
   email: string
-  phone: number
+  phone: string
   id: number
   friend?: boolean = false
 
   constructor(
     fullName: string,
     email: string,
-    phone: number,
+    phone: string,
     id: number,
     friend: boolean = false
   ) {

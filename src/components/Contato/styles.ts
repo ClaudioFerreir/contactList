@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import reactInputMask from 'react-input-mask'
 
 import variaveis from '../../styles/variaveis'
 import { FiMoreVertical, FiTrash2 } from 'react-icons/fi'
@@ -28,6 +29,18 @@ export const ContactItem = styled.li`
     outline: none;
     color: #000;
   }
+`
+
+export const PhoneInput = styled(reactInputMask)`
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+  resize: none;
+  height: 1.6em;
+  vertical-align: middle;
+  border: none;
+  outline: none;
+  color: #000;
 `
 
 export const Botao = styled.button`
