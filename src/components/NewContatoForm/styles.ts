@@ -1,7 +1,6 @@
-import InputMask from 'react-input-mask'
-
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
+import ReactInputMask from 'react-input-mask'
 
 const FormElement = styled.form`
   display: flex;
@@ -30,7 +29,7 @@ export const InputCadastroForm = styled.input`
   padding: 0.5em;
   margin-bottom: 0.5em;
 `
-export const InputPhone = styled(InputMask)`
+export const InputPhone = styled(ReactInputMask)`
   border-radius: 4px;
   border: 1px solid #ccc;
   padding: 0.5em;

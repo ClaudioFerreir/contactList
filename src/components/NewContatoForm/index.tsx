@@ -22,7 +22,10 @@ const NewContatoForm = () => {
   const cadastrarContato = (evento: FormEvent) => {
     evento.preventDefault()
     const novoContato = new Contact(fullName, email, phone, Date.now(), friend)
-    dispatch(cadastrar(novoContato))
+    dispatch({
+      type: cadastrar.type,
+      payload: JSON.parse(JSON.stringify(novoContato))
+    })
     navigate('/')
   }
 
